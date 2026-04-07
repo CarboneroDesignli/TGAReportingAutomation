@@ -1,0 +1,27 @@
+{
+  "android": {
+    "platformName": "Android",
+    "appium:deviceName": "SM-A556E",
+    "appium:udid": "R5CXA3M1FAF",
+    "appium:platformVersion": "16",
+    "appium:orientation": "PORTRAIT",
+    "appium:automationName": "UiAutomator2",
+    "appium:appPackage": "com.thegriefapp.qa",
+    "appium:appActivity": "com.thegriefapp.MainActivity",
+    "appium:appWaitActivity": "com.thegriefapp.MainActivity",
+    "appium:newCommandTimeout": 240,
+    "appium:noReset": true,
+    "appium:dontStopAppOnReset": true
+  },
+  "ios": {
+    "platformName": "iOS",
+    "appium:deviceName": "iPhone 16 Pro",
+    "appium:platformVersion": "18.5",
+    "appium:orientation": "PORTRAIT",
+    "appium:automationName": "XCUITest",
+    "appium:app": "C:/Users/Marlon/Desktop/TGA_WebDriveriO_Appium/apps/ios.simulator.wdio.native.app.v2.0.0.zip",
+    "appium:newCommandTimeout": 240,
+    "appium:webviewConnectTimeout": 20000,
+    "appium:maxTypingFrequency": 30
+  }
+}
