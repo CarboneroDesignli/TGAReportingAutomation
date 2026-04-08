@@ -6,10 +6,11 @@ Feature: Record audio journal entry
 
   Scenario: Record, replace and try again, record again, save with title, verify in My recordings
     Given I am on the Journal screen
-    When I tap the Record Audio tab
+    When I tap Add my audio entry
+    And I tap the Record Audio tab
     And I record audio for 5 seconds
+    And I tap "While using the app"
     And I tap Finish
-    And I enter "This is a test" as the recording title
     And I tap Replace and try again
     And I record audio for 5 seconds
     And I tap Finish

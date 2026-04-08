@@ -38,6 +38,7 @@ export const config: WebdriverIO.Config = {
     // See also: https://github.com/webdriverio/webdriverio/tree/main/packages/wdio-cucumber-framework#cucumberopts-options
     cucumberOpts: {
         require: [
+            path.join(__dirname, "..", "tests", "hooks", "loginHook.ts"),
             path.join(__dirname, "..", "tests", "steps", "common_steps.ts"),
             path.join(
                 __dirname,
@@ -101,11 +102,11 @@ export const config: WebdriverIO.Config = {
             "appium:platformVersion": "16",
             "appium:orientation": "PORTRAIT",
             "appium:automationName": "UiAutomator2",
-            "appium:appPackage": "com.thegriefapp.qa",
+            "appium:appPackage": "com.thegriefapp",
             "appium:appActivity": "com.thegriefapp.MainActivity",
             "appium:appWaitActivity": "com.thegriefapp.MainActivity",
             "appium:newCommandTimeout": 240,
-            "appium:noReset": true,
+            "appium:noReset": false,
         },
     ],
 };

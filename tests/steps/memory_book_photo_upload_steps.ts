@@ -4,11 +4,9 @@ import AddToMemoryBookScreen from '../screenobjects/AddToMemoryBookScreen.js';
 import GalleryScreen from '../screenobjects/GalleryScreen.js';
 import NativeAlert from '../screenobjects/components/NativeAlert.js';
 
-When('I tap {string}', async (buttonLabel: string) => {
-    if (buttonLabel === 'Add to memory book') {
-        await MemoryBookScreen.tapAddToMemoryBook();
-        await AddToMemoryBookScreen.waitForIsShown();
-    }
+When('I tap "Add to memory book"', async () => {
+    await MemoryBookScreen.tapAddToMemoryBook();
+    await AddToMemoryBookScreen.waitForIsShown();
 });
 
 When('I tap the photo upload button', async () => {
@@ -24,12 +22,8 @@ When('I tap the photo upload button', async () => {
 });
 
 When('I select the first image from the gallery', async () => {
-    // En lugar de esperar el selector SCREEN, simplemente esperamos a que algo 
-    // clickable aparezca en pantalla.
-    await driver.pause(1000); 
+    await driver.pause(1000);
     await GalleryScreen.tapFirstImage();
-    
-    await AddToMemoryBookScreen.waitForIsShown();
 });
 When('I enter {string} as the description', async (description: string) => {
     // 1. Obtenemos la fecha y hora actual

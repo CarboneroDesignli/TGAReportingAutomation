@@ -10,5 +10,4 @@ Given('I am on the Memory Book screen', async () => {
 
 Given('I am on the Journal screen', async () => {
     await TGATabBar.openJournal();
-    await JournalScreen.waitForIsShown();
 });

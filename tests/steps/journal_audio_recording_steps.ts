@@ -13,7 +13,23 @@ When('I tap the Record Audio tab', async () => {
     await RecordAudioScreen.waitForIsShown();
 });
 
+When('I tap "While using the app"', async () => {
+    try {
+        const btn = $('id:com.android.permissioncontroller:id/permission_allow_foreground_only_button');
+        if (await btn.waitForDisplayed({ timeout: 4000 })) {
+            await btn.click();
+        }
+    } catch (_) { /* permission already granted — dialog not shown */ }
+    await driver.pause(2000);
+});
+
+When('I tap Add my audio entry', async () => {
+    await driver.pause(3000);
+    await RecordAudioScreen.tapAddMyAudioEntry();
+});
+
 When('I record audio for 5 seconds', async () => {
+    await driver.pause(3000);
     await RecordAudioScreen.tapRecord();
     await driver.pause(3000);
 });
