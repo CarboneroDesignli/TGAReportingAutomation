@@ -33,7 +33,11 @@ run(`npx allure generate allure-results --clean -o ${REPORT_DIR}`);
 // 3. Push to gh-pages
 console.log("\nDeploying to gh-pages...");
 const timestamp = new Date().toISOString().replace("T", " ").substring(0, 19);
+const gitName = execSync("git config user.name").toString().trim();
+const gitEmail = execSync("git config user.email").toString().trim();
 run("git init -b gh-pages", { cwd: REPORT_DIR });
+run(`git config user.name "${gitName}"`, { cwd: REPORT_DIR });
+run(`git config user.email "${gitEmail}"`, { cwd: REPORT_DIR });
 run("git add .", { cwd: REPORT_DIR });
 run(`git commit -m "Deploy Allure report ${timestamp}"`, { cwd: REPORT_DIR });
 run(`git push --force "${REMOTE_URL}" gh-pages`, { cwd: REPORT_DIR });
