@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","36988","Successfully upload the first gallery image to a memory book entry","Upload photo from gallery to memory book","2026-04-07","passed","2026-04-07","","","",""
+"","35229","Successfully add a good moment entry with a photo","Upload a good moment to memory book","2026-04-07","passed","2026-04-07","","","",""
+"","127854","Record, replace and try again, record again, save with title, verify in My recordings","Record audio journal entry","2026-04-07","passed","2026-04-07","","","",""
