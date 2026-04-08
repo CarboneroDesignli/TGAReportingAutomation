@@ -31,7 +31,8 @@
         "allure:generate": "allure generate allure-results --clean -o allure-report",
         "allure:open": "allure open allure-report",
         "allure:report": "npm run allure:generate && npm run allure:open",
-        "allure:clean": "node -e \"['allure-results','allure-report'].forEach(d=>{try{require('fs').rmSync(d,{recursive:true,force:true})}catch(e){}})\""
+        "allure:clean": "node -e \"['allure-results','allure-report'].forEach(d=>{try{require('fs').rmSync(d,{recursive:true,force:true})}catch(e){}})}\"",
+        "allure:deploy": "bash scripts/deploy-report.sh"
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^8.50.1",
