@@ -24,3 +24,6 @@ allure-report/
 # Claude Code
 .claude/
 .mcp.json
+
+# Allure deploy temp files
+history/
