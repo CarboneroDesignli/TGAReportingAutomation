@@ -3,6 +3,15 @@ set -e
 
 REPORT_DIR="allure-report"
 REMOTE_URL=$(git remote get-url origin)
+HISTORY_DIR="allure-results/history"
+
+# Restore history from previous gh-pages report to preserve trends
+echo "Fetching history from gh-pages..."
+rm -rf "$HISTORY_DIR"
+git fetch origin gh-pages 2>/dev/null && \
+  git checkout origin/gh-pages -- history 2>/dev/null && \
+  mv history "$HISTORY_DIR" || \
+  echo "No previous history found, starting fresh."
 
 echo "Generating Allure report..."
 npx allure generate allure-results --clean -o "$REPORT_DIR"
